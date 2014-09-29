@@ -1,5 +1,3 @@
-package tugasrpl;
-
 import javax.swing.JOptionPane;
 
 public class bank {
@@ -67,3 +65,77 @@ public void setnsb3(){
       return no_t;
   }
 }
+
+import javax.swing.JOptionPane;
+
+public class menu_utama extends bank{
+ public static void main(String[] args){
+     int pilih1;
+        
+        nasabah coba=new nasabah();  
+        nasabah Tombol;
+        Tombol = coba;
+       
+        int x=0;
+        do
+        {String data2=JOptionPane.showInputDialog(" ++= *BANK MAJU MUNDUR* =++ \n 1. Nasabah Baru "
+                + "\n 2. Setoran \n 3. Transfer  \n 4. Mengambil \n 5. Exit \n "
+                + " Masukan Pilihan Anda?");
+          pilih1=Integer.parseInt(data2);
+          switch(pilih1){
+              case 1:
+              Tombol.setnsb1();
+              Tombol.setnsb2();
+              Tombol.getnsb1();
+              break;
+               
+              case 2:
+              Tombol.setnsb3();
+              Tombol.getnsb1();
+              break;
+                  
+              case 3:
+              Tombol.transfer();
+              Tombol.getnsb4();
+              break;
+                  
+              case 4:
+              Tombol.ambil();
+              Tombol.getnsb1();               
+              break;
+                  
+              case 5:
+               System.exit(0);
+              break;
+                  
+          }    
+              x++;
+          }      while (x>0);     
+        }
+}
+
+import javax.swing.JOptionPane;
+
+public class nasabah extends bank{
+   
+
+public void getnsb1(){
+    JOptionPane.showMessageDialog(null,"Data Nasabah \n"
++ "Nama Nasabah : "+getb()+"\n"
++ "No rekening : "+geta()+"\n"
++ "Saldo : Rp "+getc()+"\n");
+}
+
+public void getnsb4(){
+JOptionPane.showMessageDialog(null,"Data Nasabah \n"
++ "Nama Nasabah : "+getb()+"\n"
++ "No rekening : "+geta()+"\n"
++ "No rekening tujuan : "+gete()+"\n"
++ "Jumlah Transfer : "+getd()+"\n"
++ "Saldo : Rp "+getc()+"\n");
+}
+}
+
+
+
+
